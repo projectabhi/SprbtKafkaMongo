@@ -17,7 +17,7 @@ import com.borokali.persistence.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
+//@Component
 @Slf4j
 public class MongodbSeeder implements CommandLineRunner {
 
