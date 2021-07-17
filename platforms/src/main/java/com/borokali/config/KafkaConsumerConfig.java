@@ -13,12 +13,14 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
 @Configuration
 public class KafkaConsumerConfig {
+	
+	final String groupId="DEF_FRP";
 
 	@Bean
 	public ConsumerFactory<String, String> consumerFactory() {
 		Map<String, Object> configProps = new HashMap<>();
 		configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.196:9092");
-		//configProps.put(ConsumerConfig.GROUP_ID_CONFIG, "group_id");
+		configProps.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
 		configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 
