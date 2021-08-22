@@ -15,9 +15,16 @@ import com.borokali.persistence.mysql.entity.ParkingTickets;
 public interface TicketRepository extends CrudRepository<ParkingTickets, Long> {
 
 
-	@QueryHints(value = {
-			@QueryHint(name =org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE,value = "100")
-	})
+	
+	/**
+	 * Fetch size was not working with mysql
+	 *  when using MySQL in order to really stream the results we need to satisfy three conditions:
+     *	i. Forward-only resultset - Forward-only seems to be set already by Spring Data
+     *  ii. Read-only statement - @Transactional(readOnly = true)
+     *  iii. Fetch-size set to Integer.MIN_VALUE
+
+	 */
+	@QueryHints(value = @QueryHint(name = org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE, value = "" + Integer.MIN_VALUE))
 	@Query(value = "SELECT p FROM ParkingTickets p")
     Stream<ParkingTickets> collectTickets();
 //    
