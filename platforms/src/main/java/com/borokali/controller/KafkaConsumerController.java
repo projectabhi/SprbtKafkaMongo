@@ -17,7 +17,7 @@ public class KafkaConsumerController {
 	 */
 	
 	@KafkaListener(groupId = "DEF_FRP",topicPartitions = @TopicPartition(topic = "SimpleStringTopic2",
-			partitions = {"0","1"}),containerFactory = "kafkaListenerContainerFactory")
+			partitions = {"0","1"}),containerFactory = "kafkaListenerContainerFactory",autoStartup = "false")
     public void consume2(String message) {
         log.info(String.format("$$$$ => Consumed2 message: %s", message));
     }

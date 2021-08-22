@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.borokali.persistence.entity.Hotel;
-import com.borokali.persistence.entity.QHotel;
-import com.borokali.persistence.repository.HotelRepository;
+import com.borokali.persistence.mongo.entity.Hotel;
+import com.borokali.persistence.mongo.entity.QHotel;
+import com.borokali.persistence.mongo.repository.HotelRepository;
 import com.querydsl.core.types.dsl.BooleanExpression;
 
 import lombok.extern.slf4j.Slf4j;

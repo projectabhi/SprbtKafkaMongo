@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.borokali.persistence.entity.Address;
-import com.borokali.persistence.entity.Hotel;
-import com.borokali.persistence.entity.Review;
-import com.borokali.persistence.entity.Users;
-import com.borokali.persistence.repository.HotelRepository;
-import com.borokali.persistence.repository.UserRepository;
+import com.borokali.persistence.mongo.entity.Address;
+import com.borokali.persistence.mongo.entity.Hotel;
+import com.borokali.persistence.mongo.entity.Review;
+import com.borokali.persistence.mongo.entity.Users;
+import com.borokali.persistence.mongo.repository.HotelRepository;
+import com.borokali.persistence.mongo.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

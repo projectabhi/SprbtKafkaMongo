@@ -1,4 +1,4 @@
-package com.borokali.persistence.entity;
+package com.borokali.persistence.mongo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
